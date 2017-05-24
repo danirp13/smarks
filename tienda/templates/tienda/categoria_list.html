@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div>
+ {% for c in object_list %}
+ <a href="{% url 'categoria-detail' c.pk %}">
+
+ {{ c.nombre }}
+ </a>
+ </br>
+ 
+ {% endfor %}
+ </div>
+ <a href="{% url 'categoria-create' %}">create</a​>
+{% endblock content %} 

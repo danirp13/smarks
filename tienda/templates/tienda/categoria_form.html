@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class='row'>
+<div class='col-sm-3 col-sm-offset-3 text-align-center'>
+<form enctype="multipart/form-data" method='POST' action="">
+	{% csrf_token %}     
+
+	categoria: {{ form.id_categoria }} 
+
+	<button type="submit" class="btn btn-primary">Guardar</button>
+	<a href="{% url 'categoria-list' %}">Cancel</a>
+</form>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}  
+{% block section %}
+ <h2>Categoria {{ object.nombre }}</h2>
+ <hr>
+{% endblock section %}
+<a class="btn" href="{% url 'categoria-delete' object.id_categoria %}">delete</a​>
+<a class="btn" href="{% url 'categoria-update' object.id_categoria %}">edit</a>
+<div>
+ <table border="1">
+ <tr>
+ {% for p in object.producto_set.all %}
+ <td>
+ <div>{{ p.nombre }}</div>
+ <div>
+ <a href="{% url 'producto-detail' p.id_producto %}">
+ <img src="{% static p.photo.url %}" style="width:200px;height:200px"/>
+ </a>
+ </div>
+  </td>
+ {% endfor %}
+ </tr> 
+ </table>
+</div>
+<!---->
+ {% endblock content %}  
