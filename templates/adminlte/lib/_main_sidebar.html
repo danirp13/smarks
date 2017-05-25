@@ -42,14 +42,58 @@
                             </a>
                         </li>
                     </ul>
+                </li>
 
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-group"></i> <span>Productos</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
                     <ul class="treeview-menu">
                         <li>
                             <a href="{% url 'producto-list' %}">
                                 <i class="fa fa-user"></i><span> Lista de productos</span>
+
                             </a>
                         </li>
                     </ul>
+                    </li>
+
+                    <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-group"></i> <span>Clientes</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'cliente-list' %}">
+                                <i class="fa fa-user"></i><span> Lista de clientes</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-group"></i> <span>Ventas</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'venta-list' %}">
+                                <i class="fa fa-user"></i><span> Lista de ventas</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 </li>
             {% endblock nav_links %}
             {% endblock nav_links_outer %}

@@ -9,21 +9,21 @@ class Categoria(models.Model):
     def get_absolute_url(self):
         return reverse ('categoria-list')
     def __str__(self):
-    	return self.nombre
+        return str(self.nombre)
 
 
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
     id_categoria = models.ForeignKey(Categoria)
     photo = models.ImageField(upload_to='photos/')
-    nombre = models.CharField(max_length=80, blank=True, null=True)
+    nombre = models.CharField(max_length=90, blank=True, null=True)
     cantidad = models.BigIntegerField(blank=True, null=True)
     precio = models.BigIntegerField(blank=True, null=True)
     fecha_ingreso = models.DateField(blank=True, null=True)
     def get_absolute_url(self):
         return reverse ('producto-list')
     def __str__(self):
-    	return self.nombre
+        return self.nombre
     
 class Cliente(models.Model): 
     id_cliente = models.AutoField(primary_key=True)

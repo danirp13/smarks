@@ -3,14 +3,16 @@
 
 
 <div class='row'>
-<div class='col-sm-3 col-sm-offset-3 text-align-center'>
+<div class='col-sm-3 col-sm-offset-1 text-align-center'>
 <form enctype="multipart/form-data" method='POST' action="">
 	{% csrf_token %}     
 
-	categoria: {{ form.id_categoria }} 
-
-	<button type="submit" class="btn btn-primary">Guardar</button>
-	<a href="{% url 'categoria-list' %}">Cancel</a>
+	<h4>Categoria: </h4> <div class="text-align-center">{{ form.nombre }}</div> 
+	<h4>Descripcion: </h4> <div class="text-align-center">{{ form.descripcion }}</div>
+	<br>
+	<button type="submit" class="btn btn-default btn-sm active">Guardar</button>
+	<a class="btn btn-default btn-sm active" href="{% url 'categoria-list' %}">Cancelar</a>	
+	
 </form>
 </div>
 </div>
