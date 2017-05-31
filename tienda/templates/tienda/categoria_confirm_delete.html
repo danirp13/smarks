@@ -3,6 +3,6 @@
 <form action="" method="post">{% csrf_token %}
 <p>Delete "{{ object.nombre }}"?</p>
 <input type="submit" value="Confirm"/>
-<a class='btn' href="{% url 'categoria-list' %}">Cancel</a>
+<a class='btn' href="{% url 'categoria-list' %}">Cancelar</a>
 </form>
 {% endblock content %}

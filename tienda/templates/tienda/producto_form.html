@@ -1,9 +1,18 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
+
+<h3>Registar producto</h3>
+<br>
+<div class="row">
+<div class="col-sm-3">
 <form enctype="multipart/form-data" method='POST' action="">
 	{% csrf_token %}     
-	{{ form.as_p }}
-	<button type="submit" class="btn btn-primary">Guardar</button>
-	<a href="{% url 'producto-list' %}">Cancel</a>
+	{{ form|crispy }}
+<br>
+	<button type="submit" class="btn btn-success">Guardar</button>
+	<a class="btn btn-default btn-ex active" href="{% url 'producto-list' %}">Cancelar</a>
 </form>
+</div>
+</div>
 {% endblock content %}

@@ -5,23 +5,23 @@
  <h2>Categoria {{ object.nombre }}</h2>
  <hr>
 {% endblock section %}
-<a class="btn" href="{% url 'categoria-delete' object.id_categoria %}">delete</a​>
-<a class="btn" href="{% url 'categoria-update' object.id_categoria %}">edit</a>
-<div>
- <table border="1">
- <tr>
- {% for p in object.producto_set.all %}
- <td>
- <div>{{ p.nombre }}</div>
- <div>
- <a href="{% url 'producto-detail' p.id_producto %}">
- <img src="{% static p.photo.url %}" style="width:200px;height:200px"/>
- </a>
- </div>
-  </td>
- {% endfor %}
- </tr> 
- </table>
+<p><a href="{% url 'categoria-delete' object.id_categoria %}" class="btn btn-primary" role="button">Eliminar</a> <a href="{% url 'categoria-update' object.id_categoria %}" class="btn btn-default" role="button">Editar</a></p>
+
+{% for p in object.producto_set.all %}
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{% static p.photo.url %}" alt="Lights" style="width:200px;height:200px">
+      <div class="caption">
+        <h3>{{ p.nombre }}</h3>
+        
+      </div>
+    </div>
+  </div>
 </div>
+
+
+ {% endfor %}
+ 
 <!---->
  {% endblock content %}  

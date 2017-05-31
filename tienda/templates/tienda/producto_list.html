@@ -3,9 +3,31 @@
  <div>
  {% for c in object_list %}
  <a href="{% url 'producto-detail' c.pk %}">
- {{ c.nombre }}
+ 
+<table class="table table-striped table-inverse">
+  <thead>
+    <tr>
+
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Fecha ingreso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ c.id_producto }}</td>
+      <td>{{ c.nombre }}</td>
+      <td>{{ c.cantidad }}</td>
+      <td>{{ c.precio }}</td>
+      <td>{{ c.fecha_ingreso }}</td>
+    </tr>
+  </tbody>
+</table>
+
  </a>
  {% endfor %}
  </div>
- <a href="{% url 'producto-create' %}">create</a​>
+ <a href="{% url 'producto-create' %}"><h3>Crear</h3></a​>
 {% endblock content %} 

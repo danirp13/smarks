@@ -4,11 +4,35 @@
  {% for c in object_list %}
  <a href="{% url 'venta-detail' c.pk %}">
 
- {{ c.id_venta }}
+
+<table class="table table-striped table-inverse">
+  <thead>
+    <tr>
+
+      <th>Id</th>
+      <th>Cantidad venta</th>
+      <th>Valor</th>
+      <th>Fecha venta</th>
+      <th>Productos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ c.id_venta }}</td>
+      <td>{{ c.cantidad_venta }}</td>
+      <td>{{ c.valor }}</td>
+      <td>{{ c.fecha_venta }}</td>
+      <td>{{ c.productos }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
  </a>
  </br>
  
  {% endfor %}
  </div>
- <a href="{% url 'venta-create' %}">create</a​>
+ <a href="{% url 'venta-create' %}"><h3>Crear</h3></a​>
 {% endblock content %} 

@@ -1,15 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <div>
- {% for c in object_list %}
- <a href="{% url 'categoria-detail' c.pk %}">
+ 
+{% for c in object_list %}
+ 
 
- {{ c.nombre }}
- </a>
+<a href="{% url 'categoria-detail' c.pk %}">
+ <div class='row'>
+<div class='col-sm-5'>
+
+<table class="table table-striped table-inverse" width="50" >
+
+  <thead>
+
+    <tr>
+
+      <th>Id</th>
+      <th>Categoria</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>{{ c.id_categoria }}</td>
+      <td>{{ c.nombre }}</td>
+      <td>{{ c.descripcion }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+</div>
+</div> 
+</a>
  </br>
  
- {% endfor %}
- </div>
- <a href="{% url 'categoria-create' %}">create</a​>
+{% endfor %} 
+ 
+ <a href="{% url 'categoria-create' %}"><h3>Crear</h3></a​>
 {% endblock content %} 

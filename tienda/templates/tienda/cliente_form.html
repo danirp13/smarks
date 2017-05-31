@@ -1,18 +1,17 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
+
+<h3>Registar cliente</h3>
+<br>
 <div class='row'>
-<div class='col-sm-3 col-sm-offset-1 text-align-center'>
+<div class='col-sm-3'>
 <form enctype="multipart/form-data" method='POST' action="">
 	{% csrf_token %}     
-	<h4>Cedula: </h4> <div class="text-align-center">{{ form.cedula }} 
-	<h4>Nombre: </h4> {{ form.nombre }} 
-	<h4>Apellidos: </h4> {{ form.apellidos }}
-	<h4>Email: </h4> {{ form.email }}
-	<h4>Celular: </h4> {{ form.celular }}
-	</div> 
-	<br>
-<button type="submit" class="btn btn-default btn-sm active">Guardar</button>
-<a class="btn btn-default btn-sm active" href="{% url 'cliente-list' %}">Cancelar</a>
+	{{ form|crispy }}
+<br>
+	<button type="submit" class="btn btn-success">Guardar</button>
+	<a class="btn btn-default btn-ex active" href="{% url 'cliente-list' %}">Cancelar</a>
 
 </form>
 {% endblock content %}

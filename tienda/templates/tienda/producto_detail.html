@@ -7,8 +7,8 @@
 	( <a href="{% url 'categoria-detail' object.categoria_id %}">{{ object.categoria }}</a>)
  {% endif %} 
  </h2>
- <a href="{% url 'producto-delete' object.id_producto %}">delete</a​>
- <a href="{% url 'producto-update' object.id_producto %}">edit</a>
+ <a href="{% url 'producto-delete' object.id_producto %}">Eliminar</a​>
+ <a href="{% url 'producto-update' object.id_producto %}">Editar</a>
 
 {% endblock section %}
  
