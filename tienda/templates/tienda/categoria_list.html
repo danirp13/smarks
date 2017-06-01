@@ -2,14 +2,14 @@
 
 {% block content %}
  
-{% for c in object_list %}
+
  
 
-<a href="{% url 'categoria-detail' c.pk %}">
+
  <div class='row'>
 <div class='col-sm-5'>
 
-<table class="table table-striped table-inverse" width="50" >
+<table class="table table-striped table-inverse">
 
   <thead>
 
@@ -17,16 +17,20 @@
 
       <th>Id</th>
       <th>Categoria</th>
-      <th>Descripcion</th>
+      <th>Descripción</th>
+
     </tr>
   </thead>
 
   <tbody>
+  {% for c in object_list %}
     <tr>
       <td>{{ c.id_categoria }}</td>
       <td>{{ c.nombre }}</td>
       <td>{{ c.descripcion }}</td>
+      <td><a href="{% url 'categoria-detail' c.pk %}"><i class="fa fa-pencil-square-o" ></i></a></td>
     </tr>
+    {% endfor %} 
   </tbody>
 
 </table>
@@ -34,10 +38,10 @@
 
 </div>
 </div> 
-</a>
+
  </br>
  
-{% endfor %} 
+
  
  <a href="{% url 'categoria-create' %}"><h3>Crear</h3></a​>
 {% endblock content %} 

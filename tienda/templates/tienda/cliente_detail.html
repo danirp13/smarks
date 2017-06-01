@@ -4,7 +4,7 @@
 {% block content %}  
 
 <div>
- <table border="1px">
+ <table class="table table-striped table-inverse">
  <tr>
  
  <td><label>cedula</label></td>
@@ -21,7 +21,6 @@
  </tr>
  </table>
  </div>
-<a href="{% url 'cliente-update' object.id_cliente %}">Editar</a>
- <a href="{% url 'cliente-delete' object.id_cliente %}">Eliminar</a​> 
-
+ <a class="btn btn-default btn-ex active" href="{% url 'cliente-delete' object.id_cliente %}">Eliminar</a​></a>  
+ <a class="btn btn-success" href="{% url 'cliente-update' object.id_cliente %}">Editar</a>
  {% endblock content %}  

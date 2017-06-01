@@ -2,21 +2,33 @@
 {% load static %}
 {% block content %} 
 {% block section %}
- <h2>{{ object.nombre }}
+ 
 {% if objet.categoria_id %}
-	( <a href="{% url 'categoria-detail' object.categoria_id %}">{{ object.categoria }}</a>)
- {% endif %} 
- </h2>
- <a href="{% url 'producto-delete' object.id_producto %}">Eliminar</a​>
- <a href="{% url 'producto-update' object.id_producto %}">Editar</a>
 
+	( <a href="{% url 'categoria-detail' object.categoria_id %}">{{ object.categoria }}</a>)
+ 
+ {% endif %}
+
+
+ 
 {% endblock section %}
- 
 <div>
- <div>
+ <a class="btn btn-default btn-ex active" href="{% url 'producto-delete' object.id_producto %}">Eliminar</a​></a>
+ <a class="btn btn-success" href="{% url 'producto-update' object.id_producto %}">Editar</a>
+</div>
+</br>
+<div class="col-md-3 well">
+<div class="panel-primary"> 
+<div class="panel-heading">
+<h3​ ​class​=​"panel-title"​>{{ object.nombre }}</h3​>
+ </div>
  <img src="{% static object.photo.url %}"
-style="width:550px;height:420px"/>
+style="width:230px;height:300px"/>
+ </div>
+ <div class="panel-footer">Precio: {{ object.precio }}</div>
  </div>
  </div>
+
  
+
  {% endblock content %}  

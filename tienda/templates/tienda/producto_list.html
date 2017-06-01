@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
  <div>
- {% for c in object_list %}
- <a href="{% url 'producto-detail' c.pk %}">
  
+ 
+ <div class='row'>
+<div class='col-sm-8'>
 <table class="table table-striped table-inverse">
   <thead>
     <tr>
@@ -16,18 +17,22 @@
     </tr>
   </thead>
   <tbody>
+  {% for c in object_list %}
     <tr>
       <td>{{ c.id_producto }}</td>
       <td>{{ c.nombre }}</td>
       <td>{{ c.cantidad }}</td>
       <td>{{ c.precio }}</td>
       <td>{{ c.fecha_ingreso }}</td>
+      <td><a href="{% url 'producto-detail' c.pk %}"><i class="fa fa-eye" ></i></a></td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 
- </a>
- {% endfor %}
+</div>
+</div> 
+ 
  </div>
  <a href="{% url 'producto-create' %}"><h3>Crear</h3></a​>
 {% endblock content %} 
