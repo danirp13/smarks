@@ -25,11 +25,12 @@
   {% for c in object_list %}
     <tr>
       <td>{{ c.id_cliente }}</td>
-      <td><a href="{% url 'cliente-detail' c.pk %}">{{ c.cedula }}</a></td>
+      <td>{{ c.cedula }}</td>
       <td>{{ c.nombre }}</td>
       <td>{{ c.apellidos }}</td>
       <td>{{ c.email }}</td>
       <td>{{ c.celular }}</td>
+      <td><a href="{% url 'cliente-detail' c.pk %}"><i class="fa fa-eye" ></i></a></td>
     </tr>
     {% endfor %}
   </tbody>

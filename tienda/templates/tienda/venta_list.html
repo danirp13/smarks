@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
  <div>
- 
+ <div class='row'>
+<div class='col-sm-9'>
+
  
 
 
@@ -19,16 +21,18 @@
   <tbody>
   {% for c in object_list %}
     <tr>
-      <td><a href="{% url 'venta-detail' c.pk %}">{{ c.id_venta }}</a></td>
+      <td>{{ c.id_venta }}</td>
       <td>{{ c.cantidad_venta }}</td>
       <td>{{ c.valor }}</td>
       <td>{{ c.fecha_venta }}</td>
       <td>{{ c.productos }}</td>
+      <td><a href="{% url 'venta-detail' c.pk %}"><i class="fa fa-eye" ></i></a></td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
-
+</div>
+</div>
 
 
  
