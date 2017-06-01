@@ -1,7 +1,12 @@
-{% extends "base.html" %}
-{% load i18n %}
 
+{% load i18n %}
+{% load crispy_forms_tags %}
 {% block content %}
-<p class='lead'>{% trans "Sesión terminada." %}</p>
-<p><a href="{% url 'auth_login' %}">Login</a></p></p>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<p class='lead'><h3>{% trans "Sesión terminada." %}</h3></p>
+<p><a class="btn btn-warning" href="{% url 'auth_login' %}">Login</a></p>
+
+
 {% endblock %}
